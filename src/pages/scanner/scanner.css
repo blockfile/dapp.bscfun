@@ -50,3 +50,19 @@
     color: rgb(97, 95, 95);
 }
 /* You can also add :hover styles for button or any other styling as needed */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.input-cursor::after {
+    content: "|";
+    animation: blink 1s step-start infinite;
+    margin-left: -1px; /* Adjust as necessary */
+}
+
+/* Hide the blinking cursor when the input has content or is focused */
+.input-cursor:not(:focus):placeholder-shown::after {
+    content: none;
+}

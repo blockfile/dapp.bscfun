@@ -268,13 +268,6 @@ function Scanner() {
     //     return (parseFloat(percent) * 100).toFixed(2); // Converts to a percentage and fixes to 2 decimal places
     // };
 
-    const handleInputChange = (e) => {
-        setContractAddress(e.target.value);
-        if (e.target.value.trim() !== "") {
-            setHasInput(true);
-        }
-    };
-
     const fetchTokenSecurityData = async (contractAddress, network) => {
         setIsLoading(true);
         try {
@@ -302,7 +295,12 @@ function Scanner() {
             setIsLoading(false);
         }
     };
-
+    const handleInputChange = (e) => {
+        setContractAddress(e.target.value);
+        if (e.target.value.trim() !== "") {
+            setHasInput(true);
+        }
+    };
     const checkHoneypot = async () => {
         setIsLoading(true);
         const honeypotUrl = `https://api.honeypot.is/v2/IsHoneypot?address=${contractAddress}`;
@@ -375,6 +373,8 @@ function Scanner() {
                                         value={contractAddress}
                                         onChange={handleInputChange}
                                         id="contract-address-input"
+                                        className="input-cursor" // Add this class
+                                        placeholder=" " // Add a space as placeholder
                                         style={{
                                             flexGrow: 1,
                                             background: "black",

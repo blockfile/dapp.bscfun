@@ -1,0 +1,112 @@
+.bg {
+    background-color: #171921; /* Your desired background color */
+    min-height: 100vh; /* Minimum full viewport height */
+    width: 100%; /* Full width */
+    position: relative; /* To position it relative to the viewport */
+}
+.div-color {
+    background-color: #f0ece5;
+}
+/* For Chrome, Safari, and Edge */
+.hide-scrollbar::-webkit-scrollbar {
+    width: 8px; /* or any thin width you prefer */
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+    background: transparent; /* optional: transparent track will not be visible */
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+    background: #888; /* scrollbar color */
+    border-radius: 4px; /* rounded corners */
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555; /* scrollbar color on hover */
+}
+
+/* For Firefox */
+.hide-scrollbar {
+    scrollbar-width: thin; /* 'thin' is the equivalent of a narrower scrollbar in Firefox */
+    scrollbar-color: #888 transparent; /* scrollbar thumb and track colors */
+}
+
+/* For Internet Explorer and Edge */
+.hide-scrollbar {
+    -ms-overflow-style: none; /* Hide scrollbar for IE, Edge */
+}
+/* For Chrome, Safari, and Edge */
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* For Firefox */
+body,
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    font-family: "Rajdhani";
+}
+
+/* For Internet Explorer and Edge */
+body,
+html {
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Optionally, for Internet Explorer, you can hide the scrollbar:
+   However, this will remove the ability to scroll with the mouse wheel */
+body,
+html {
+    overflow: -ms-autohiding-scrollbar;
+}
+/* Add transitions to tokens and locks */
+.token-transition,
+.lock-transition {
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Initial state for entering tokens and locks */
+.token-enter,
+.lock-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Final state for entered tokens and locks */
+.token-enter-active,
+.lock-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.log-entry {
+    border-bottom: 1px solid #6b6a6a; /* Light border for each log entry */
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.log-entry:hover {
+    background: #3d3d3d; /* Slightly darker on hover */
+}
+
+.total-locked {
+    padding: 10px;
+    font-weight: bold;
+}

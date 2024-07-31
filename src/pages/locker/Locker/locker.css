@@ -1,0 +1,6 @@
+.bg {
+    background-color: #171921; /* Your desired background color */
+    min-height: 100vh; /* Minimum full viewport height */
+    width: 100%; /* Full width */
+    position: relative; /* To position it relative to the viewport */
+}

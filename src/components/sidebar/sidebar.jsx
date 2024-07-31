@@ -135,10 +135,10 @@ function Sidebar() {
                             </span>
                             <h4>Wallet</h4>
                         </a>
-                        <a href="/locker">
+                        <Link to="/main">
                             <span class="material-symbols-outlined">lock</span>
                             <h4>Locker</h4>
-                        </a>
+                        </Link>
                         <a href="/scan">
                             <span class="material-symbols-outlined">
                                 monitoring

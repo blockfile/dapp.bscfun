@@ -4,7 +4,10 @@ import { useRoutes } from "react-router-dom";
 import Maintenance from "./pages/maintenance";
 import Scanner from "../src/pages/scanner/scanner";
 // import NavbarSolo from "./components/navbar/navbarsolo";
-
+import Main from "../src/pages/locker/Main/main";
+import Unlocker from "../src/pages/locker/Unlocker/unlocker";
+import Locker from "../src/pages/locker/Locker/locker";
+import TokenDetails from "../src/pages/locker/Main/tokendetails";
 function App() {
     let element = useRoutes([
         {
@@ -28,8 +31,20 @@ function App() {
             element: <Scanner />,
         },
         {
+            path: "/main",
+            element: <Main />,
+        },
+        {
             path: "/locker",
-            element: <Maintenance />,
+            element: <Locker />,
+        },
+        {
+            path: "/unlocker",
+            element: <Unlocker />,
+        },
+        {
+            path: "/main/:trans_token",
+            element: <TokenDetails />,
         },
         {
             path: "/scan",
@@ -40,7 +55,11 @@ function App() {
             element: <Maintenance />,
         },
     ]);
-    return <div className="App bg-black ">{element}</div>;
+    return (
+        <div className="App bg-black  overflow-x-hidden overflow-y-hidden ">
+            {element}
+        </div>
+    );
 }
 
 export default App;
